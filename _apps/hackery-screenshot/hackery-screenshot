@@ -1,0 +1,18 @@
+#!/bin/sh
+
+TMP_SHOT_FILE="/tmp/shot-$USER.png"
+
+rm "$TMP_SHOT_FILE" || true
+
+spectacle -rbno "$TMP_SHOT_FILE"
+if [ -f "$TMP_SHOT_FILE" ]; then
+    timestamp=`date +"%Y/%m/%d/%H-%M-%S"`
+    screenshot_file="$HOME/Screenshots/$timestamp.png"
+
+    mkdir -p `dirname $screenshot_file`
+    mv "$TMP_SHOT_FILE" "$screenshot_file"
+    result=`hackery-upload "$screenshot_file"`
+    uploaded_url="https://hackery.site/u/$result"
+    echo -n "$uploaded_url" | wl-copy # xclip -i -selection clipboard
+    notify-send -i "$screenshot_file" "Uploaded" "<u>$uploaded_url</u>"
+fi

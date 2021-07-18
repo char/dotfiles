@@ -1,0 +1,34 @@
+#!/bin/sh
+
+function help() {
+    echo "hackery-upload - Upload a file to hackery.site"
+    echo "Usage:"
+    echo "  hackery-upload <file>"
+
+    exit 1
+}
+
+ARGS=$(getopt -o "hd:t:e:" -l "help,dir:,tree:,exclude:" -n "inodes" -- "$@")
+
+if [ $? -ne 0 ];
+then
+    help
+fi
+
+eval set -- "$ARGS"
+
+while true; do
+    case "$1" in
+        -h|--help)
+            shift
+            help
+            ;;
+        --)
+            shift
+            break
+            ;;
+    esac
+done
+
+UPLOAD_AUTH=`< $HOME/.config/hackery-upload/key`
+curl -s -F "file=@$1" -H "Authorization: $UPLOAD_AUTH" "https://hackery.site/u"
