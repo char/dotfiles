@@ -1,0 +1,22 @@
+[theme]
+name = "native"
+[theme.overrides]
+separator = " "
+
+[icons]
+name = "none"
+[icons.overrides]
+volume_empty = ""
+volume_full = ""
+volume_half = ""
+volume_muted = ""
+time = ""
+
+[[block]]
+block = "sound"
+step_width = 1
+
+[[block]]
+block = "time"
+interval = 4
+format = "%R"
