@@ -1,0 +1,9 @@
+#!/bin/sh
+
+engine=$(ibus engine)
+if [ "${engine}" == "hangul" ]
+then
+  ibus engine xkb:gb::eng
+else
+  ibus engine hangul
+fi
