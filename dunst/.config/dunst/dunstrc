@@ -1,0 +1,75 @@
+[global]
+    monitor = 0
+    follow = mouse
+    geometry = "480x1-32+48"
+    indicate_hidden = yes
+    shrink = yes
+    transparency = 0
+    notification_height = 0
+    separator_height = 2
+    padding = 16
+    horizontal_padding = 16
+    frame_width = 1
+    frame_color = "#f07fbe"
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+    font = sans-serif 12
+    line_height = 0
+
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+    alignment = left
+
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+
+    icon_position = left
+    max_icon_size = 32
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    sticky_history = yes
+    history_length = 20
+
+    dmenu = /usr/bin/rofi -dmenu -p dunst
+
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+    force_xinerama = false
+
+    browser = /usr/bin/xdg-open
+
+[experimental]
+    per_monitor_dpi = false
+
+[shortcuts]
+    close = mod4+period
+    close_all = mod4+shift+period
+    history = mod4+comma
+    context = mod4+shift+comma
+
+[urgency_low]
+    background = "#19171a"
+    foreground = "#9d989f"
+    frame_color = "#4a4a4a"
+    timeout = 10
+
+[urgency_normal]
+    background = "#19171a"
+    foreground = "#fcf2f8"
+    frame_color = "#f07fbe"
+    timeout = 10
+
+[urgency_critical]
+    background = "#19171a"
+    foreground = "#fcf2f8"
+    frame_color = "#f07fbe"
+    timeout = 0
