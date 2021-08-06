@@ -2,7 +2,7 @@
 
 Portable configurations for my computing setup.
 
-I use [Arch Linux](https://archlinux.org/) and [bspwm](https://github.com/baskerville/bspwm).
+I use [Arch Linux](https://archlinux.org/) and [swaywm](https://swaywm.org/).
 
 ## Usage
 
