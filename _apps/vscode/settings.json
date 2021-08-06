@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "monospace",
+    "editor.fontSize": 16,
+    "editor.suggestSelection": "first",
+    "files.insertFinalNewline": true,
+    "window.menuBarVisibility": "toggle"
+}
