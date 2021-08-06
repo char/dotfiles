@@ -1,0 +1,45 @@
+; My default input method is byeoru, for Hangul input,
+; but I also use google-cgiapi-jp for Japanese input.
+
+; Global Settings
+(define custom-activate-default-im-name? #t)
+(define custom-preserve-default-im-name 'byeoru)
+
+(define default-im-name 'byeoru)
+(define enabled-im-list '(byeoru google-cgiapi-jp))
+
+(define enable-im-switch? #t)
+(define-key switch-im-key? '("<Shift><Super> "))
+(define switch-im-skip-direct-im? #t)
+
+(define enable-im-toggle? #f)
+
+
+; Byeoru settings
+(define byeoru-layout 'byeoru-layout-hangul2)
+(define byeoru-jamo-orderedness 'ordered)
+(define byeoru-commit-by-word? #f)
+
+(define-key byeoru-on-key? '("<Super> "))
+(define-key byeoru-latin-key? '("<Super> "))
+(define-key byeoru-conversion-key? '("<Alt><Super> "))
+
+
+; Google-CGIAPI-JP settings
+(define google-cgiapi-jp-widgets 
+    '(widget_google-cgiapi-jp_input_mode widget_google-cgiapi-jp_kana_input_method)
+)
+(define google-cgiapi-jp-input-mode-actions 
+    '(action_google-cgiapi-jp_direct action_google-cgiapi-jp_hiragana action_google-cgiapi-jp_katakana)
+)
+
+(define default-widget_google-cgiapi-jp_input_mode 'action_google-cgiapi-jp_hiragana)
+
+(define-key google-cgiapi-jp-transpose-as-hiragana-key? '("<Alt><Super> "))
+(define-key google-cgiapi-jp-transpose-as-katakana-key? '("<Alt><Super> "))
+
+(define-key google-cgiapi-jp-on-key? '("<Super> "))
+(define-key google-cgiapi-jp-off-key? '("<Super> "))
+
+(define-key google-cgiapi-jp-commit-key? '("return" " "))
+(define-key google-cgiapi-jp-cancel-key? '("escape"))
