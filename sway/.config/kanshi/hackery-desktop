@@ -1,5 +1,9 @@
 profile {
-    output DP-2 position 1440,450 mode 2560x1440@143.999Hz scale 1
-    output HDMI-A-1 position 4000,628 mode 1920x1080@60Hz scale 1
-    output DP-3 position 0,0 mode 3840x2160 scale 1.5 transform 90
+    output DP-2 position 0,0 mode 3840x2160 scale 1.5 transform 90
+    output DP-3 position 1440,450 mode 2560x1440@143.999Hz scale 1
+}
+
+
+profile {
+    output DP-1 position 0,0 mode 3840x2160 transform 90
 }
