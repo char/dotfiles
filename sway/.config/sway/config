@@ -1,5 +1,6 @@
-exec "systemctl --user import-environment"
+include "/etc/sway/config.d/*.conf"
+
+for_window [urgent="latest"] focus
 
 include "conf.d/*.conf"
 include "conf.d/machine-specific/$(cat /etc/hostname)/*.conf"
-include "/etc/sway/config.d/*.conf"
