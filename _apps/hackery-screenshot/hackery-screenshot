@@ -1,7 +1,6 @@
 #!/bin/sh
 
 TMP_SHOT_FILE="/tmp/shot-$USER.png"
-
 rm "$TMP_SHOT_FILE" || true
 
 grim -g "$(slurp)" "$TMP_SHOT_FILE"
@@ -11,8 +10,14 @@ if [ -f "$TMP_SHOT_FILE" ]; then
 
     mkdir -p `dirname $screenshot_file`
     mv "$TMP_SHOT_FILE" "$screenshot_file"
-    result=`hackery-upload "$screenshot_file"`
-    uploaded_url="https://hackery.site/u/$result"
-    echo -n "$uploaded_url" | wl-copy # xclip -i -selection clipboard
-    notify-send -i "$screenshot_file" "Uploaded" "<u>$uploaded_url</u>"
+
+    if [[ -z "$HACKERY_SCREENSHOT_UPLOAD" ]]; then
+      wl-copy < "$screenshot_file"
+      notify-send -i "$screenshot_file" "Screenshot copied to clipboard."
+    else
+      result=`hackery-upload "$screenshot_file"`
+      uploaded_url="https://hackery.site/u/$result"
+      echo -n "$uploaded_url" | wl-copy # xclip -i -selection clipboard
+      notify-send -i "$screenshot_file" "Uploaded" "<u>$uploaded_url</u>"
+    fi
 fi
