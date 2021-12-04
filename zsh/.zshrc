@@ -19,3 +19,8 @@ source ~/.zsh/config.zsh
 source ~/.zsh/appearance.zsh
 source ~/.zsh/prompt.zsh
 source ~/.zsh/environment.zsh
+
+if ! command -v antibody &> /dev/null
+then
+    source ~/.zsh/macos.zsh
+fi
