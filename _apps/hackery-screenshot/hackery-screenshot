@@ -3,7 +3,8 @@
 TMP_SHOT_FILE="/tmp/shot-$USER.png"
 rm "$TMP_SHOT_FILE" || true
 
-grim -g "$(slurp)" "$TMP_SHOT_FILE"
+# grim -g "$(slurp)" "$TMP_SHOT_FILE"
+gnome-screenshot --area --include-pointer --file "$TMP_SHOT_FILE"
 if [ -f "$TMP_SHOT_FILE" ]; then
     timestamp=`date +"%Y/%m/%d/%H-%M-%S"`
     screenshot_file="$HOME/Screenshots/$timestamp.png"
