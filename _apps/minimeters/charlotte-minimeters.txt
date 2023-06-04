@@ -1,0 +1,8 @@
+credit: "made by charlotte athena: https://char.lt"
+color: 185, 89, 255
+selection: 210, 162, 245
+text: 234, 234, 248
+accent: 181,127,220
+bg: 22, 19, 28
+bgaccent: 28, 23, 36
+spectrogram_main: 185, 89, 255
