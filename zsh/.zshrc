@@ -1,7 +1,5 @@
-~/.zsh/antibody/get-antibody.sh
-
-source <(antibody init)
-antibody bundle < ~/.zsh/antibody/bundles
+source ~/.zsh/antidote/antidote.zsh
+antidote load
 
 if [ "$TERM" = "xterm-termite" ]
 then
