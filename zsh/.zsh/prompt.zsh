@@ -18,7 +18,9 @@ function _prompt_parse_git_dirty() {
 }
 
 _prompt_pipenv() {
-  if [[ -n $PIPENV_ACTIVE ]]; then
+  if [[ -n $__RYE_SHELL ]]; then
+    echo " [rye]"
+  elif [[ -n $PIPENV_ACTIVE ]]; then
     echo " [pipenv]"
   else
     echo ""
