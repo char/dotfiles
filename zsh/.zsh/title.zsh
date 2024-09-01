@@ -44,7 +44,7 @@ function title_precmd {
 
 function title_preexec {
     emulate -L zsh
-    setopt extended_glob
+    setopt local_options extended_glob
 
     local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
     local LINE="${2:gs/%/%%}"
