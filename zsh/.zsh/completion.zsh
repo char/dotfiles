@@ -13,6 +13,10 @@
 #   compinit -C
 # fi
 
+if ! type nixos-rebuild > /dev/null; then
+  autoload -Uz compinit
+  compinit
+fi
 
 # fixme - the load process here seems a bit bizarre
 zmodload -i zsh/complist
