@@ -1,5 +1,5 @@
 [left]
 hostname = "obelisk.bunny-hops.ts.net"
 ips = ["100.121.66.67"]
-port = 4242
+port = 5555
 activate_on_startup = true
