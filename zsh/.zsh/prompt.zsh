@@ -22,6 +22,8 @@ _prompt_pipenv() {
     echo " [rye]"
   elif [[ -n $PIPENV_ACTIVE ]]; then
     echo " [pipenv]"
+  elif [[ -n $VIRTUAL_ENV_PROMPT ]]; then
+    echo "$VIRTUAL_ENV_PROMPT" | sed 's/^(\(.*\)) $/ [\1]/'
   else
     echo ""
   fi
