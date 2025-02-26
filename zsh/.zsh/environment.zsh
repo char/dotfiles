@@ -15,7 +15,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Editor and pager
 export EDITOR="vim"
-export VISUAL="less"
+export VISUAL="vim"
 
 bindkey -e # Even though vim is $EDITOR, we want emacs-esque line editing.
 
