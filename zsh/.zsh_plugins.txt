@@ -1,4 +1,3 @@
 romkatv/zsh-defer
 zsh-users/zsh-completions
-mafredri/zsh-async
-zsh-users/zsh-syntax-highlighting kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
