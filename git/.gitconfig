@@ -1,0 +1,19 @@
+[user]
+	name = Charlotte Som
+	email = charlotte@som.codes
+[init]
+	defaultBranch = main
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+[push]
+	autoSetupRemote = true
+[commit]
+	verbose = true
