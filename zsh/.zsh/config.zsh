@@ -11,7 +11,6 @@ setopt SHARE_HISTORY
 # add timestamps to history
 setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
-setopt CORRECT
 setopt COMPLETE_IN_WORD
 # adds history
 setopt APPEND_HISTORY
