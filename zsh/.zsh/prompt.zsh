@@ -48,16 +48,19 @@ prompt_precmd() {
 }
 
 prompt_init() {
+  fpath+=$HOME/.zsh/vcs_info_jj
+
   export PROMPT_EOL_MARK=''
   autoload -Uz add-zsh-hook
   autoload -Uz vcs_info
 
   add-zsh-hook precmd prompt_precmd
 
-  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*' enable git jj
   zstyle ':vcs_info:*' use-simple true
-  zstyle ':vcs_info:git*' formats '%b'
-  zstyle ':vcs_info:git*' actionformats '%b|%a'
+  zstyle ':vcs_info:git:*' formats '%b'
+  zstyle ':vcs_info:git:*' actionformats '%b|%a'
+  zstyle ':vcs_info:jj:*' formats '%b %i'
 
   zstyle ':vcs_info:*' max-exports 2
 }
