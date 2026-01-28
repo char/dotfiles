@@ -19,7 +19,7 @@ eval `${vcs_comm[cmd]} log --ignore-working-copy -n 1 --no-graph --color never \
 eval `${vcs_comm[cmd]} log --ignore-working-copy -n 1 --no-graph --color never -r "@" \
   -T '
     separate(" ",
-      "revision=\"" ++ change_id.shortest(6) ++ "\"",
+      "revision=\"" ++ change_id.shortest(4) ++ "\"",
       "_parent_id=\"" ++ parents.map(|c| c.change_id()).join("-") ++ "\"",
       if(empty, "", "unstaged=true"),
       if(conflict, "action=conflict")
