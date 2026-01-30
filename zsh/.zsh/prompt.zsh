@@ -1,5 +1,7 @@
 _prompt_color() {
-  if [[ -n $SSH_CONNECTION ]]; then
+  if [[ "$EUID" -eq 0 ]]; then
+    echo "%F{red}"
+  elif [[ -n $SSH_CONNECTION ]]; then
     echo "%F{cyan}"
   else
     echo "%F{magenta}%F{13}"
@@ -7,7 +9,7 @@ _prompt_color() {
 }
 
 function _prompt_parse_git_dirty() {
-  if jj status 2>&1 > /dev/null; then
+  if jj status 2>/dev/null >/dev/null; then
     echo ""
     return
   fi
