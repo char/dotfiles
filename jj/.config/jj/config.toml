@@ -1,0 +1,12 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Charlotte Som"
+email = "charlotte@som.codes"
+
+[aliases]
+tug = ["bookmark", "move", "main"]
+push = ["git", "push", "--allow-empty-description"]
+
+[ui]
+default-command = "log"
