@@ -1,6 +1,8 @@
 # npm packages in PATH
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
+NPM_PACKAGES="$HOME/.npm-packages"
+if [ -s "$NPM_PACKAGES" ]; then
+  export PATH="$NPM_PACKAGES/bin:$PATH"
+fi
 
 if [ -s "$HOME/.deno" ]; then
   export DENO_HOME="$HOME/.deno"
@@ -13,14 +15,16 @@ if [ -s "$HOME/.bun" ]; then
   source "$BUN_HOME/_bun"
 fi
 
-
-if [ -f "/usr/bin/opam" ]
-then
-    export PATH="$PATH:$HOME/.opam/default/bin"
-    opam () { eval "$(/usr/bin/opam env)" && /usr/bin/opam $@ }
+if [ -f "/usr/bin/opam" ]; then
+  export PATH="$PATH:$HOME/.opam/default/bin"
+  opam () { eval "$(/usr/bin/opam env)" && /usr/bin/opam $@ }
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if [ -s "$HOME/.cargo" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # Editor and pager
 export EDITOR="vim"
