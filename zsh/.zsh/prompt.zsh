@@ -68,7 +68,8 @@ prompt_init() {
   zstyle ':vcs_info:*' use-simple true
   zstyle ':vcs_info:git:*' formats '%b'
   zstyle ':vcs_info:git:*' actionformats '%b|%a'
-  zstyle ':vcs_info:jj:*' formats '%s: %i'
+  zstyle ':vcs_info:jj:*' formats '%s: %i%u'
+  zstyle ':vcs_info:jj:*' unstagedstr ' !'
 
   zstyle ':vcs_info:*' max-exports 2
 }
