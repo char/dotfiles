@@ -35,6 +35,9 @@ _prompt_pipenv() {
 }
 
 prompt_precmd() {
+  # reset cursor shape to default; nvim & hx don't restore properly
+  printf '\e[0 q'
+
   if [ -z "${ZSH_NO_VCS_PROMPT+x}" ]; then
     vcs_info
 
