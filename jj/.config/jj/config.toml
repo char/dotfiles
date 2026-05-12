@@ -10,3 +10,4 @@ push = ["git", "push", "--allow-empty-description"]
 
 [ui]
 default-command = "log"
+editor = "hx"
