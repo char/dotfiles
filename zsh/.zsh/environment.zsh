@@ -27,8 +27,8 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Editor and pager
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="hx"
+export VISUAL="hx"
 
 bindkey -e # Even though vim is $EDITOR, we want emacs-esque line editing.
 
